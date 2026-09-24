@@ -5,10 +5,8 @@ import { Logo } from "@/components/Logo";
 import { RevealObserver } from "@/components/RevealObserver";
 import { site } from "@/lib/site";
 
-import mirror from "@/assets/mirror.jpg";
 import reformerKnee from "@/assets/reformer-knee.jpg";
 import studioStretch from "@/assets/studio-stretch.jpg";
-import groupLegs from "@/assets/group-legs.jpg";
 import groupRing from "@/assets/group-ring.jpg";
 import studioPink from "@/assets/studio-pink.jpg";
 import studioLight from "@/assets/studio-light.jpg";
@@ -54,17 +52,22 @@ export default function Home() {
       <main>
         {/* ——— HERO ——— */}
         <section id="pocetna" className="hero">
-          <div className="hero__media">
-            <video
-              className="hero__video"
-              src="/media/hero.mp4"
-              poster="/media/hero-poster.jpg"
-              autoPlay
-              muted
-              loop
-              playsInline
-              aria-hidden="true"
-            />
+          <div className="hero__visual">
+            <div className="hero__media">
+              <video
+                className="hero__video"
+                src="/media/hero.mp4"
+                poster="/media/hero-poster.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-hidden="true"
+              />
+            </div>
+            <figure className="hero__inset">
+              <Image src={reformerKnee} alt="Vežba na reformeru u svetlom prostoru studija" sizes="14vw" placeholder="blur" priority />
+            </figure>
           </div>
           <div className="hero__content">
             <p className="eyebrow hero__eyebrow">Pilates Studio 77 · Niš</p>
@@ -73,49 +76,25 @@ export default function Home() {
               <span className="line"><span>način na koji</span></span>
               <span className="line"><span>se <em>osećaš.</em></span></span>
             </h1>
-            <p className="hero__lead">Reformer Pilates i presoterapija u prijatnom, intimnom prostoru u Nišu.</p>
+            <p className="hero__lead">
+              Reformer Pilates i presoterapija u prijatnom, intimnom prostoru u Nišu. Sat vremena bez žurbe — vreme
+              posvećeno sebi.
+            </p>
             <div className="hero__ctas">
               <a href="#zakazivanje" className="btn btn--dark">Zakaži termin</a>
               <a href="#studio" className="btn btn--line">Istraži studio</a>
             </div>
+            <ul className="hero__facts">
+              <li data-short="Reformer"><span>Reformer</span> Pilates</li>
+              <li data-short="Presoterapija"><span>Presoterapija</span> za oporavak</li>
+              <li data-short="STOTT instruktor"><span>STOTT</span> sertifikovani instruktor</li>
+            </ul>
             <p className="hero__meta">
               <span className="pin" aria-hidden="true" />
               {site.street} · {site.city}
             </p>
           </div>
           <p className="hero__side" aria-hidden="true">Reformer Pilates — Presoterapija</p>
-        </section>
-
-        {/* ——— INTRO ——— */}
-        <section className="intro section">
-          <div className="container intro__grid">
-            <div className="intro__text">
-              <p className="eyebrow" data-reveal>Studio 77</p>
-              <h2 className="h2" data-reveal>
-                Vreme posvećeno <em>sebi.</em>
-              </h2>
-              <p className="lead" data-reveal>
-                Sat vremena bez telefona, bez žurbe. Kontrolisan pokret, dah i fokus — u studiju koji je miran,
-                svetao i napravljen da se u njemu osećaš dobro.
-              </p>
-              <p className="intro__quote" data-reveal>
-                Tvoje telo. Tvoja energija.
-              </p>
-              <ul className="facts" data-reveal>
-                <li><span>Reformer</span> Pilates</li>
-                <li><span>Presoterapija</span> za oporavak</li>
-                <li><span>STOTT</span> sertifikovani instruktor</li>
-              </ul>
-            </div>
-            <div className="intro__media">
-              <figure className="arch intro__img-a" data-reveal="image">
-                <Image src={mirror} alt="Vežba ispred lučnog ogledala u Studiju 77" sizes="(min-width: 900px) 34vw, 70vw" placeholder="blur" />
-              </figure>
-              <figure className="intro__img-b" data-reveal="image">
-                <Image src={reformerKnee} alt="Vežba na reformeru u svetlom prostoru studija" sizes="(min-width: 900px) 20vw, 45vw" placeholder="blur" />
-              </figure>
-            </div>
-          </div>
         </section>
 
         {/* ——— REFORMER ——— */}
@@ -144,12 +123,6 @@ export default function Home() {
               </ol>
               <a href="#usluge" className="btn btn--light" data-reveal>Saznaj više</a>
             </div>
-          </div>
-          <div className="container">
-            <figure className="reformer__wide" data-reveal="image">
-              <Image src={groupLegs} alt="Grupni trening na reformerima u Studiju 77" sizes="(min-width: 1200px) 1160px, 100vw" placeholder="blur" />
-              <figcaption>Studio 77 · Niš</figcaption>
-            </figure>
           </div>
         </section>
 
